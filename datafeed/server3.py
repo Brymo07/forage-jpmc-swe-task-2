@@ -18,7 +18,7 @@
 #  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 #  DEALINGS IN THE SOFTWARE.
 
-# from itertools import izip
+# from itertools import zip
 from random import normalvariate, random
 from datetime import timedelta, datetime
 
@@ -45,7 +45,7 @@ REALTIME = True
 SIM_LENGTH = timedelta(days=365 * 5)
 MARKET_OPEN = datetime.today().replace(hour=0, minute=30, second=0)
 
-# Market parms
+# Market params
 #       min  / max  / std
 SPD = (2.0, 6.0, 0.1)
 PX = (60.0, 150.0, 1)
@@ -297,7 +297,7 @@ class App(object):
             t1, bids1, asks1 = next(self._current_book_1)
             t2, bids2, asks2 = next(self._current_book_2)
         except Exception as e:
-            print("error getting stocks...reinitalizing app")
+            print("error getting stocks...reinitializing app")
             self.__init__()
             t1, bids1, asks1 = next(self._current_book_1)
             t2, bids2, asks2 = next(self._current_book_2)
